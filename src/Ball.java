@@ -23,26 +23,40 @@ public class Ball extends Sprite {
 		setY(Settings.INITIAL_BALL_Y);
 	}
 	
+	// Update the ball sprite as the game progresses
 	public void update() {
+		// Increase the x/y variables by xVelocity/yVelocity
 		x += xVelocity;
-		// TODO: Increase the y variable by yVelocity (see above)
+		y += yVelocity;
 		
 		// Bounce off left side of screen
 		if(x <= 0) {
-			// TODO: Set x to 0 so it does not leave the screen
-			// TODO: Change the x velocity to make the ball go right
+			// Set x to 0 so it does not leave the screen
+			x = 0;
+			/* Change the x velocity to positive to make the ball go up the x axis.
+			Rather than setting to determined integer, an equation has been used to convert into
+			the opposite. This allows for the actual velocity speed to change through the game */ 
+			xVelocity = xVelocity * -1;
 		}
 		
 		// Bounce off right side of screen
 		if(x >= Settings.WINDOW_WIDTH - Settings.BALL_WIDTH) {
-			// TODO: Set x to the right edge of the screen (see the above if condition)
-			// TODO: Change the x velocity to make the ball go left
+			// Set x to the right edge of the screen so it does not leave the screen
+			x = Settings.WINDOW_WIDTH - Settings.BALL_WIDTH;
+			/* Change the x velocity to negative to make the ball go down the x axis.
+			Rather than setting to a determined integer, an equation has been used to convert into
+			the opposite. This allows for the actual velocity speed to change through the game */
+			xVelocity = xVelocity * -1;
 		}
 		
 		// Bounce off top of screen
 		if(y <= 0) {
-			// TODO: Set y to 0 so it does not leave the screen
-			// TODO: Change the y velocity to make the ball go downward
+			// Set y to 0 so it does not leave the screen
+			y = 0;
+			/* Change the y velocity to negative the ball go down the y axis.
+			Rather than setting to a determined integer, an equation has been used to convert into
+			the opposite. This allows for the actual velocity speed to change through the game */
+			yVelocity = yVelocity * -1;
 		}
 		
 	}

@@ -23,10 +23,12 @@ public class Paddle extends Sprite {
 		setY(Settings.INITIAL_PADDLE_Y);
 	}
 	
+	// Update the paddle sprite as the game progresses
 	public void update() {
+		// Update the velocity to move the paddle when required
 		x += xVelocity;
 		
-		// TODO: Prevent the paddle from moving outside of the screen
+		// Prevent the paddle from moving outside of the screen
 		// Stop at left side of screen
 		if(x <= 0) {
 		x -= xVelocity;

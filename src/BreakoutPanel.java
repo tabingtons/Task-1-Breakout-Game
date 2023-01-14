@@ -196,7 +196,7 @@ public class BreakoutPanel extends JPanel implements ActionListener, KeyListener
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		// TODO: Set the velocity of the paddle after the player has released the keys
+		// Set the velocity of the paddle to 0 after the player has released the keys
 		paddle.setXVelocity(0);
 	}
 
