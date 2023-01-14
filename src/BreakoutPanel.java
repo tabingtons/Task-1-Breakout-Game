@@ -21,17 +21,24 @@ public class BreakoutPanel extends JPanel implements ActionListener, KeyListener
 	private Paddle paddle;
 	private Brick bricks[];
 	
+	// Constructor for the BreakoutPanel
 	public BreakoutPanel(Breakout game) {
 		
+		// Allow the KeyListener
 		addKeyListener(this);
 		setFocusable(true);
 		
+		// Create a new timer and set the delay
 		Timer timer = new Timer(5, this);
+		// Start the timer
 		timer.start();
 		
-		// TODO: Create a new ball object and assign it to the appropriate variable
-		// TODO: Create a new paddle object and assign it to the appropriate variable
-		// TODO: Create a new bricks array (Use Settings.TOTAL_BRICKS)
+		// Create a new ball object and assign it to the ball variable
+		ball = new Ball();
+		// Create a new paddle object and assign it to the paddle variable
+		paddle = new Paddle();
+		// TODO: Create a new bricks array using Settings.TOTAL_BRICKS
+		
 		// TODO: Call the createBricks() method
 	}
 	

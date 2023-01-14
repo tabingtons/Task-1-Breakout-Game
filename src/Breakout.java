@@ -14,7 +14,7 @@ public class Breakout extends JFrame{
 		// Set the size of the screen (use Settings.WINDOW_WIDTH/HEIGHT)
 		setSize(Settings.WINDOW_WIDTH, Settings.WINDOW_HEIGHT);
 		// Set the title of the frame
-		setTitle("Breakout");
+		setTitle(Settings.WINDOW_NAME);
 		// Set the background colour to white
 		setBackground(Color.WHITE);
 		// Stop window from being resized
