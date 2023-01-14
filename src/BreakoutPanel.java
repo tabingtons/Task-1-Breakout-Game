@@ -64,10 +64,15 @@ public class BreakoutPanel extends JPanel implements ActionListener, KeyListener
 		}
 	}
 	
+	// Method to check the progression of the game and update as needed if the game is still running
 	private void update() {
 		if(gameRunning) {
-			// TODO: Update the ball and paddle
+			// call the methods to update the ball and paddle
+			ball.update();
+			paddle.update();
+			// Check for collisions
 			collisions();
+			// Repaint the panel to show next step in gameplay
 			repaint();
 		}
 	}
@@ -172,13 +177,27 @@ public class BreakoutPanel extends JPanel implements ActionListener, KeyListener
     }
 
 	@Override
+	// Set the velocity of the paddle depending on whether the player is pressing left or right
 	public void keyPressed(KeyEvent e) {
-		// TODO: Set the velocity of the paddle depending on whether the player is pressing left or right
+		// Set variable for the key that has been pressed
+		int keyCode = e.getKeyCode();
+		// Read if it is the left key
+		if (keyCode == KeyEvent.VK_LEFT) {
+			// set velocity to negative to make paddle go down the x axis
+	   		paddle.setXVelocity(-1);
+		}
+
+		// Read if it is the right key
+		if (keyCode == KeyEvent.VK_RIGHT) {
+			// set velocity to positive to make paddle go up the x axis
+			paddle.setXVelocity(1);
+	 	}
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO: Set the velocity of the paddle after the player has released the keys
+		paddle.setXVelocity(0);
 	}
 
 	@Override
