@@ -4,11 +4,14 @@ public class Ball extends Sprite {
 
 	private int xVelocity = 1, yVelocity = -1;
 	
-	// Constructor
+	// Constructor for the ball
 	public Ball() {
-		// TODO: Set width to Settings.BALL_WIDTH
-		// TODO: Set width to Settings.BALL_HEIGHT
-		// TODO: Call resetPosition
+		// Set width to Settings.BALL_WIDTH
+		setWidth(Settings.BALL_WIDTH);
+		// Set height to Settings.BALL_HEIGHT
+		setHeight(Settings.BALL_HEIGHT);
+		// Call the resetPosition to set ball to starting point
+		resetPosition();
 	}
 	
 	/**
@@ -17,7 +20,7 @@ public class Ball extends Sprite {
 	 */
 	public void resetPosition() {
 		setX(Settings.INITIAL_BALL_X);
-		// TODO: Set the balls y by using the INITIAL_BALL_Y (see above)
+		setY(Settings.INITIAL_BALL_Y);
 	}
 	
 	public void update() {
