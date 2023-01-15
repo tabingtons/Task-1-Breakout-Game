@@ -14,11 +14,16 @@ public class Brick extends Sprite {
 		setHeight(Settings.BRICK_HEIGHT);
 	}
 
+	// Method to check if the brick is broken
 	public boolean isBroken() {
-		return false;	// TODO: Return the correct variable
+		// return broken boolean variable for this brick
+		return broken;
 	}
+
+	// Set the broken boolean variable according to the variable passed to the method
 	public void setBroken(boolean b) {
-		// TODO: Set the broken variable using the parameter given
+		// Set the broken variable using the parameter given
+		broken = b;
 	}
 	
 	public void paint(Graphics g) {

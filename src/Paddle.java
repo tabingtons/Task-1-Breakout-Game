@@ -23,12 +23,21 @@ public class Paddle extends Sprite {
 		setY(Settings.INITIAL_PADDLE_Y);
 	}
 	
+	// Update the paddle sprite as the game progresses
 	public void update() {
+		// Update the velocity to move the paddle when required
 		x += xVelocity;
 		
-		// TODO: Prevent the paddle from moving outside of the screen
-		// This can be done using two if statements (one for the left side of the screen and one for the right)
+		// Prevent the paddle from moving outside of the screen
+		// Stop at left side of screen
+		if(x <= 0) {
+		x -= xVelocity;
+		}
 
+		// Stop at right side of screen
+		if(x >= Settings.WINDOW_WIDTH - Settings.PADDLE_WIDTH) {
+			x -= xVelocity;
+		}
 	}
 	
 	public void paint(Graphics g) {
@@ -37,5 +46,6 @@ public class Paddle extends Sprite {
 	
 	public void setXVelocity(int vel) {
 		// TODO: Set x velocity
+		xVelocity = vel;
 	}
 }
