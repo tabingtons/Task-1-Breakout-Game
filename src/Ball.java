@@ -61,18 +61,28 @@ public class Ball extends Sprite {
 		
 	}
 	
+	// Public method to set the velocity of x
 	public void setXVelocity(int x) {
-		// TODO: Set the x velocity
+		// Set the x velocity
+		xVelocity = x;
 	}
+
+	// Public method to set the velocity of y
 	public void setYVelocity(int y) {
-		// TODO: Set the y velocity
+		// Set the y velocity
+		yVelocity = y;
 	}
 	
+	// Public method to get the velocity of x
 	public int getXVelocity() {
-		return 0;	// TODO: Return the x velocity
+		// return current int assigned to xVelocity variable
+		return xVelocity;
 	}
+
+	// Public method to get the velocity of y
 	public int getYVelocity() {
-		return 0;	// TODO: Return the y velocity
+		// return current int assigned to xVelocity variable
+		return yVelocity;
 	}
 	
 	public void paint(Graphics g) {
